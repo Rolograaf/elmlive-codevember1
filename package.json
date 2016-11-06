@@ -1,0 +1,21 @@
+{
+  "name": "elmlive-codevember1",
+  "version": "1.0.0",
+  "description": "Following along @avh4 Codevember day 1 (2016) on youtube",
+  "main": "index.js",
+  "repository": {
+    "url": "elmlive-codevember1",
+    "type": "git"
+  },
+  "author": "Rolograaf",
+  "license": "BSD3",
+  "devDependencies": {
+    "elm": "0.17.1",
+    "elm-live": "2.6.0"
+  },
+  "scripts": {
+    "test": "elm-test || true",
+    "test-init" : "./node_modules/.bin/elm-test init",
+    "elm-live": "./node_modules/.bin/elm-live Main.elm --open"
+  }
+}
