@@ -7,7 +7,7 @@ thanks Aaron!
 - [#Codevember on twitter](https://twitter.com/codevember_)
 - [Codevember website day 1](http://codevember.xyz/day/1)
 
-![first random pattern created](day1/first-random-pattern.jpg) ![another one](day1/anothert-random-pattern.jpg) (image is random rendered on browser refresh)
+![animated on browser refresh](day1/animated.gif)
 
 making use of [Kwarrtz/render](http://package.elm-lang.org/packages/Kwarrtz/render/latest) SVG render package making use of Random and the Random-extra package
 
