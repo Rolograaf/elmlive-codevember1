@@ -20,10 +20,25 @@ making use of [Kwarrtz/render](http://package.elm-lang.org/packages/Kwarrtz/rend
 
 # continued day 2
 
-## same repository but subfolder
+## same repository but now in subfolders
 
-- [elmlive Codevember day 2](https://www.youtube.com/watch?v=OBYVWaAIosM) ![animated](day2/animated.gif)
+- [elmlive Codevember day 2](https://www.youtube.com/watch?v=OBYVWaAIosM)
+
+  ### result
+
+  ![animated](day2/animated.gif)
 
   ## commands
 
 - `npm run live2` to start the server ( or `./node_modules/.bin/elm-live ./day2/Main.elm --open )
+
+# continued day 3
+
+making a Japanese Wave inspired graphic
+
+- [elmlive Codevember day 2](https://www.youtube.com/watch?v=KcXfvS-sl8A)
+- ![animated](day3/animated.gif)
+
+## commands
+
+- `npm run live3` to start the server ( or `./node_modules/.bin/elm-live ./day3/Main.elm --open )

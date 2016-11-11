@@ -17,6 +17,7 @@
     "test": "elm-test || true",
     "test-init" : "./node_modules/.bin/elm-test init",
     "elm-live": "./node_modules/.bin/elm-live ./day1/Main.elm --open",
-    "live2": "./node_modules/.bin/elm-live ./day2/Main.elm --open"
+    "live2": "./node_modules/.bin/elm-live ./day2/Main.elm --open",
+    "live3": "./node_modules/.bin/elm-live ./day3/Main.elm --open"
   }
 }
