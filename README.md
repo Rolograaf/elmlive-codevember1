@@ -1,6 +1,6 @@
 # ElmLive - Codevember Day 1 (2016)
 
-## Following along @avh4 at [youtube](https://www.youtube.com/watch?v=Z0yKvWqkqyE)
+## Following along @avh4 at [youtube](https://www.youtube.com/playlist?list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf)
 
 thanks Aaron!
 
@@ -62,3 +62,19 @@ Day 4 of Codevember 2016\. We color triangles using the ColourLovers API, and ha
 - `npm install http-server -g` for local server
 - `npm run color-server` or `http-server -p 8001 --cors` to start the server since CORS does not let us use ColourLovers API!
 - `npm run live4` to start the server ( or `./node_modules/.bin/elm-live ./day4/Main.elm --open )
+
+# continued day 5
+
+Day 5 of Codevember 2016\. We make an animated scene with bright colors.
+
+- Cors issues with day4 are corrected by using [crossorigin](http://crossorigin.me/) a free CORS proxy
+- Using Max Goldstein's [elm-animation](http://package.elm-lang.org/packages/mgold/elm-animation/latest)
+- Using [Easing](http://package.elm-lang.org/packages/elm-community/easing-functions/latest)
+
+![animated on browser refresh](day5/animated.gif)
+
+## commands
+
+- `elm-package install mgold/elm-animation` for the animation package
+- `elm-package install elm-community/easing-functions` for easing
+- `npm run live5` to start the server ( or `./node_modules/.bin/elm-live ./day5/Main.elm --open` )
