@@ -78,3 +78,22 @@ Day 5 of Codevember 2016\. We make an animated scene with bright colors.
 - `elm-package install mgold/elm-animation` for the animation package
 - `elm-package install elm-community/easing-functions` for easing
 - `npm run live5` to start the server ( or `./node_modules/.bin/elm-live ./day5/Main.elm --open` )
+
+# continued day 6
+
+Day 6 of Codevember 2016\. We learn about WebGL and how to use it with Elm, and also learn how to use elm-webgl correctly to avoid sever performance problems :)
+
+- we are using [WebGL for elm](http://package.elm-lang.org/packages/elm-community/elm-webgl/latest)
+- starting by copying the [cube example](https://github.com/elm-community/elm-webgl/blob/master/examples/cube.elm)
+- we need the [Fast Linear Algebra for Elm-package](http://package.elm-lang.org/packages/elm-community/elm-linear-algebra/latest)
+- and [Getting Smooth Animations package](http://package.elm-lang.org/packages/elm-lang/animation-frame/latest)
+
+![animated webGL](Day6/animated.gif) (mine seem to bee turning more than one time 360 degrees...)
+
+## commands
+
+- `elm-package install elm-community/elm-linear-algebra` for the Algebra package
+- `elm-package install elm-community/elm-webgl` for WebGL
+- `elm-package install elm-lang/animation-frame` for Animation-frame
+- `npm run live6` to start the server ( or `./node_modules/.bin/elm-live ./day6/Main.elm --open` )
+- next episode : <https://youtu.be/h9w0qmyEnOg>

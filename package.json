@@ -21,6 +21,7 @@
     "live3": "./node_modules/.bin/elm-live ./day3/Main.elm --open",
     "live4": "./node_modules/.bin/elm-live ./day4/Main.elm --open",
     "live5": "./node_modules/.bin/elm-live ./day5/Main.elm --open",
+    "live6": "./node_modules/.bin/elm-live ./day6/Main.elm --open",
     "color-server": "http-server -p 8001 --cors"
   }
 }
