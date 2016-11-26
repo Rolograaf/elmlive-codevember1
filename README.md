@@ -88,7 +88,7 @@ Day 6 of Codevember 2016\. We learn about WebGL and how to use it with Elm, and 
 - we need the [Fast Linear Algebra for Elm-package](http://package.elm-lang.org/packages/elm-community/elm-linear-algebra/latest)
 - and [Getting Smooth Animations package](http://package.elm-lang.org/packages/elm-lang/animation-frame/latest)
 
-![animated webGL](Day6/animated.gif) (mine seem to bee turning more than one time 360 degrees...)
+![animated webGL](Day6/animated.gif)
 
 ## commands
 
@@ -97,3 +97,24 @@ Day 6 of Codevember 2016\. We learn about WebGL and how to use it with Elm, and 
 - `elm-package install elm-lang/animation-frame` for Animation-frame
 - `npm run live6` to start the server ( or `./node_modules/.bin/elm-live ./day6/Main.elm --open` )
 - next episode : <https://youtu.be/h9w0qmyEnOg>
+
+# continued day 7
+
+Day 7 of Codevember 2016\. We learn how to write (Phong) lighting shaders and happen upon a pleasing arrangement of cubes.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day7/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day7>
+- Live streaming on <https://twitch.tv/avh4> recorded at <https://youtu.be/h9w0qmyEnOg?list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf>
+
+![animated](Day7/animated.gif)
+
+Links:
+
+- Codevember <http://codevember.xyz/>
+- elm-webgl <http://package.elm-lang.org/packages/elm-community/elm-webgl/latest>
+- Learn OpenGL: Basic Lighting tutorial <http://learnopengl.com/#!Lighting/Basic-Lighting>
+- glsl-lighting-walkthrough <https://github.com/stackgl/glsl-lighting-walkthrough>
+
+## commands
+
+- `npm run live7` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day7/Main.elm --open` )
