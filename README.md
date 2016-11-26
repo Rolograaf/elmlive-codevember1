@@ -118,3 +118,24 @@ Links:
 ## commands
 
 - `npm run live7` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day7/Main.elm --open` )
+
+# continued day 8
+
+Day 8 of Codevember 2016\. We make a simulation of people crossing the street.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day8/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day8>
+
+- Live streaming on <https://twitch.tv/avh4> recorded at <https://www.youtube.com/watch?v=Y6STRt7kI5I&list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf&index=9>
+
+![animated crossroads simulation](Day8/animated.gif)
+
+Links:
+
+- Codevember <http://codevember.xyz/>
+- Street intersection diagram <https://commons.wikimedia.org/wiki/File:Street_intersection_diagram.svg>
+
+## commands
+
+- `npm run live8` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day8/Main.elm --open` )
+- `elm-package install elm-community/random-extra`
