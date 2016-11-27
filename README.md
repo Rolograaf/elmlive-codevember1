@@ -152,3 +152,26 @@ Day 9 of Codevember 2016\. We take a look at a WebGL Elm logo made at the SF Elm
 ## commands
 
 - `npm run live9` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day9/Main.elm --open` )
+
+# continued day 10
+
+Day 10 of Codevember 2016\. We follow a vertex shader tutorial for making slimy broccoli with perlin noise.
+
+- [the elm-live YouTube recording](https://www.youtube.com/watch?v=m4o8-jO1v1w)
+- [the Github repository](https://github.com/avh4/codevember-2016/tree/master/Day10)
+- Codevember <http://codevember.xyz/>
+- [Vertex displacement with a noise function using GLSL](https://www.clicktorelease.com/blog/vertex-displacement-noise-3d-webgl-glsl-three-js)
+- ["ClassicNoise3D" Perlin noise algorithm in GLSL](https://github.com/ashima/webgl-noise/blob/master/src/classicnoise3D.glsl)
+- [Icosphere mesh algorithm in Haskell](https://github.com/stepcut/icosphere/blob/master/icosphere.hs)
+- chroma.js <https://gka.github.io/chroma.js/>
+- kfish/elm-shadertoy <https://github.com/kfish/elm-shadertoy>
+
+![first step](Day10/animated1.gif)
+
+![second step](Day10/animated2.gif)
+
+![final slimey broccoli](Day10/animated3.gif)
+
+## commands
+
+- `npm run live10` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day10/Main.elm --open` )
