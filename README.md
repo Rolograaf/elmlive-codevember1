@@ -139,3 +139,16 @@ Links:
 
 - `npm run live8` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day8/Main.elm --open` )
 - `elm-package install elm-community/random-extra`
+
+# continued day 9
+
+Day 9 of Codevember 2016\. We take a look at a WebGL Elm logo made at the SF Elm Meetup with Carlos.
+
+- The [YouTube recording](https://www.youtube.com/watch?v=ngGtntF3BAQ) is really a quick recap of the coding done during the [Elm hack night meetup in San Fransisco](https://www.youtube.com/watch?v=ngGtntF3BAQ)
+- It is a webGL project like Day7 using the Phong-shader, but making the elm-logo this time
+
+![animated result](Day9/animated.gif)
+
+## commands
+
+- `npm run live9` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day9/Main.elm --open` )
