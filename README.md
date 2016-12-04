@@ -175,3 +175,29 @@ Day 10 of Codevember 2016\. We follow a vertex shader tutorial for making slimy 
 ## commands
 
 - `npm run live10` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day10/Main.elm --open` )
+
+# continued day 11
+
+Day 11 of Codevember 2016\. We publish a new elm package (containing the icosphere mesh we created in Codevember Day 10), and write a fragment shader completely from scratch with no help from tutorials!
+
+- [Try it](https://avh4.github.io/codevember-2016/Day11/)
+- [Code from @avh4](https://github.com/avh4/codevember-2016/tree/master/Day11)
+- live stream <https://twitch.tv/avh4>
+- [Youtube recording](https://www.youtube.com/watch?v=Zlztj90RVAI&index=13&list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf)
+
+![animated image](Day11/animated.gif)
+
+There is some hue2rgb and hsl2rgb code in this example making the final image nicer, which is not in the recorded Youtube.
+
+Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+Links:
+
+- Codevember <http://codevember.xyz/>
+- donate to Trans Lifeline <http://www.translifeline.org/>
+- [avh4/elm-meshes (the package we published)](http://package.elm-lang.org/packages/avh4/elm-meshes/latest)
+- [glsl-hsl2rgb](https://github.com/Jam3/glsl-hsl2rgb/blob/master/index.glsl)
+
+## commands
+
+- `npm run live11` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day11/Main.elm --open` )

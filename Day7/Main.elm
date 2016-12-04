@@ -139,6 +139,13 @@ type alias Uniforms =
     }
 
 
+type alias Varyings =
+    { vcolor : Vec3
+    , vnormal : Vec3
+    , vpos : Vec3
+    }
+
+
 uniforms : Float -> Float -> Float -> Float -> Uniforms
 uniforms x y r t =
     let
@@ -151,19 +158,14 @@ uniforms x y r t =
         , camera = makeLookAt cameraPos (vec3 0 0 0) (vec3 0 1 0)
         , cameraPos = cameraPos
         , shade = 0.8
-        , transform = Math.Matrix4.identity |> translate3 (x * 2.5) (y * 2.5) 0
+        , transform =
+            Math.Matrix4.identity
+                |> translate3 (x * 2.5) (2.5 * y) 0
         , lightPos =
             vec3 0 -30 5
                 |> Math.Matrix4.transform (makeRotate t Math.Vector3.k)
         , lightColor = vec3 1 1 1
         }
-
-
-type alias Varyings =
-    { vcolor : Vec3
-    , vnormal : Vec3
-    , vpos : Vec3
-    }
 
 
 
@@ -188,7 +190,7 @@ void main () {
     gl_Position = perspective * camera * rotation * transform * vec4(position, 1.0);
     vcolor = color;
     vnormal = normal;
-    vpos = vec3 (transform * vec4(position, 1.0));
+    vpos = vec3(transform * vec4(position, 1.0));
 }
 
 |]
@@ -207,17 +209,17 @@ varying vec3 vcolor;
 varying vec3 vnormal;
 varying vec3 vpos;
 void main () {
-    // Ambient Lighting
+    // Ambient lighting
     vec3 ambient = shade * vcolor;
 
-    // Diffuse Lighting
+    // Diffuse lighting
     vec3 norm = normalize(vnormal);
     vec3 lightDir = normalize(lightPos - vpos);
     float diff = max(dot(vnormal, lightDir), 0.0);
     vec3 diffuse = diff * lightColor;
 
-    // Specular Lighting
-    float specularStrength = 2.0;
+    // Specular lighting
+    float specularStrength = 0.8;
     vec3 cameraDir = normalize(cameraPos - vpos);
     vec3 reflectDir = reflect(-lightDir, norm);
     float spec = pow(max(dot(cameraDir, reflectDir), 0.0), 128.0);
@@ -225,7 +227,6 @@ void main () {
 
     vec3 result = (ambient + diffuse + specular) * vcolor;
     gl_FragColor = vec4(result, 1.0);
-
 }
 
 |]
