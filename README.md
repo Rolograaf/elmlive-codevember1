@@ -201,3 +201,29 @@ Links:
 ## commands
 
 - `npm run live11` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day11/Main.elm --open` )
+
+# continued day 12
+
+Day 12 of Codevember 2016\. We make a random art generator generator.
+
+- [Aarons's result](https://avh4.github.io/codevember-2016/Day12/)
+- [Aaron's Code](https://github.com/avh4/codevember-2016/tree/master/Day12)
+
+Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+Links:
+
+- Codevember <http://codevember.xyz/>
+- At suicide hotlines, the first 24 hours os Trump's America have been full of fear <https://www.washingtonpost.com/news/morning-mix/wp/2016/11/10/at-suicide-hotlines-the-first-24-hours-of-trumps-america-have-been-full-of-fear/>
+- National Suicide Prevention Lifeline <http://suicidepreventionlifeline.org/>
+- donate to Trans Lifeline <http://www.translifeline.org/>
+- This Code is using [elm-graphics](http://package.elm-lang.org/packages/evancz/elm-graphics/latest)
+- - This Code is using [window](http://package.elm-lang.org/packages/elm-lang/window/latest)
+
+![animated and sped up](Day12/animated.gif)
+
+## commands
+
+- `elm-package install evancz/elm-graphics`
+- `elm-package install elm-lang/window`
+- `npm run live12` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day12/Main.elm --open` )
