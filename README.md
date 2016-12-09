@@ -208,6 +208,8 @@ Day 12 of Codevember 2016\. We make a random art generator generator.
 
 - [Aarons's result](https://avh4.github.io/codevember-2016/Day12/)
 - [Aaron's Code](https://github.com/avh4/codevember-2016/tree/master/Day12)
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=FkBL0xqR_Kc&index=14&list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf)
 
 Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
 
@@ -218,7 +220,7 @@ Links:
 - National Suicide Prevention Lifeline <http://suicidepreventionlifeline.org/>
 - donate to Trans Lifeline <http://www.translifeline.org/>
 - This Code is using [elm-graphics](http://package.elm-lang.org/packages/evancz/elm-graphics/latest)
-- - This Code is using [window](http://package.elm-lang.org/packages/elm-lang/window/latest)
+- This Code is using [window](http://package.elm-lang.org/packages/elm-lang/window/latest)
 
 ![animated and sped up](Day12/animated.gif)
 
@@ -227,3 +229,40 @@ Links:
 - `elm-package install evancz/elm-graphics`
 - `elm-package install elm-lang/window`
 - `npm run live12` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day12/Main.elm --open` )
+
+# continued day 13
+
+Day 13 of Codevember 2016\. (It's weekend!) We combine canvas and WebGL to make animated eyes.
+
+- [Aarons's result](https://avh4.github.io/codevember-2016/Day13/)
+- [Aaron's Code](https://github.com/avh4/codevember-2016/tree/master/Day13)
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=MgkVcBl2kf0&index=15&list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf)
+
+## Links:
+
+- Today's inspiration [one](https://twitter.com/sarah_edo/status/794252476178276352) [two](https://twitter.com/saraislet/status/797358158595248129)
+- Codevember <http://codevember.xyz/>
+- [Bezier Curve on StackOverflow](https://stackoverflow.com/questions/5634460/quadratic-bezier-curve-calculate-point)
+
+## Elm packages used today:
+
+- <http://package.elm-lang.org/packages/evancz/elm-graphics/latest>
+- <http://package.elm-lang.org/packages/mgold/elm-animation/latest>
+- <http://package.elm-lang.org/packages/elm-community/easing-functions/latest>
+- <http://package.elm-lang.org/packages/elm-community/elm-random-extra/latest>
+- <http://package.elm-lang.org/packages/elm-lang/animation-frame/latest>
+
+### Politics links:
+
+- [Supreme Court case Nixon v. Fitzgerald (legal immunity for government officials)](https://en.wikipedia.org/wiki/Nixon_v._Fitzgerald)
+- [Clinton v. Jones (setting President has no immunity for acts done before taking office)](https://en.wikipedia.org/wiki/Clinton_v._Jones)
+- Summary of lawsuits against Donald Trump [one](https://en.wikipedia.org/wiki/Legal_affairs_of_Donald_Trump) [two](http://www.thedailybeast.com/articles/2016/11/10/75-lawsuits-against-president-elect-trump.html) [three](http://www.politicususa.com/2016/11/01/mainstream-media-ignoring-75-lawsuits-trump-focus-clinton-emails.html) [four](http://www.theatlantic.com/politics/archive/2016/10/donald-trump-scandals/474726/)
+
+- Sexual misconduct allegations against Bill Clinton, Donald Trump, and Warren Buffet - [one](https://en.wikipedia.org/wiki/Bill_Clinton_sexual_misconduct_allegations) [two](https://en.wikipedia.org/wiki/Donald_Trump_sexual_misconduct_allegations) [three](http://nymag.com/thecut/2016/10/all-the-women-accusing-trump-of-rape-sexual-assault.html) [four](http://beforeitsnews.com/alternative/2012/05/human-sacrificing-satanist-bankster-warren-buffet-exposed-2181611.html)
+
+## commands
+
+- `elm-package install evancz/elm-graphics`
+- `elm-package install elm-lang/window`
+- `npm run live13` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day13/Main.elm --open` )

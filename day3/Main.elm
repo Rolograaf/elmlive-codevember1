@@ -84,16 +84,16 @@ view model =
             |> svg 750 500
 
 
+type Msg
+    = NewModel Model
+
+
 type alias Model =
     { color1 : Color
     , color2 : Color
     , shiftX : Float
     , shiftY : Float
     }
-
-
-type Msg
-    = NewModel Model
 
 
 colorGenerator : Random.Generator Model

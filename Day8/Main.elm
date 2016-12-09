@@ -11,14 +11,14 @@ import Random.Extra
 import Random.Color
 
 
-yellowTime : Int
-yellowTime =
-    50
-
-
 greenTime : Int
 greenTime =
     200
+
+
+yellowTime : Int
+yellowTime =
+    50
 
 
 roadSize : Int
