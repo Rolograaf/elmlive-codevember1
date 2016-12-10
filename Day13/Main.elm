@@ -2,87 +2,169 @@ module Main exposing (..)
 
 import Collage
 import Element
-import Color exposing (Color)
 import Day13.Eye as Eye exposing (Eye)
+import Day13.TrippyBackground as TrippyBackground
 import Html exposing (Html)
 import Html.App
+import Html.Attributes
 import Time exposing (Time)
 import Random
 import Random.Extra
+import Color exposing (Color)
+import Animation
+import AnimationFrame
+
+
+appearTime : Float
+appearTime =
+    2000
 
 
 type alias Model =
-    { eyes : List ( ( Float, Float ), Eye ), now : Time }
+    { eyes : List ( ( Float, Float ), Eye )
+    , disappearingEye : Maybe ( Time, ( Float, Float ), Eye )
+    , appearingEye : Maybe ( Time, ( Float, Float ), Eye )
+    , now : Time
+    }
 
 
 initialModel : Model
 initialModel =
     { eyes = []
+    , disappearingEye = Nothing
+    , appearingEye = Nothing
     , now = 0
     }
 
 
 type Msg
     = Tick Time
-    | StartBlink Time
-    | NewEyes (List ( ( Float, Float ), Eye ))
+    | StartBlink
+    | ChangeEye
+    | ResetEyes (List ( ( Float, Float ), Eye ))
+    | NewEye ( ( Float, Float ), Eye )
+
+
+promoteAppearingEye : Model -> Model
+promoteAppearingEye model =
+    case model.appearingEye of
+        Nothing ->
+            model
+
+        Just ( startTime, ( x, y ), eye ) ->
+            if startTime + appearTime <= model.now then
+                { model
+                    | appearingEye = Nothing
+                    , eyes = model.eyes ++ [ ( ( x, y ), eye ) ]
+                }
+            else
+                model
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Tick t ->
-            ( { model | now = t }, Cmd.none )
+        Tick diff ->
+            ( { model | now = model.now + diff }
+                |> promoteAppearingEye
+            , Cmd.none
+            )
 
-        StartBlink t ->
+        StartBlink ->
             ( { model
                 | eyes =
-                    List.map (\( p, eye ) -> ( p, Eye.startBlink t eye ))
+                    List.map (\( p, eye ) -> ( p, Eye.startBlink model.now eye ))
                         model.eyes
               }
             , Cmd.none
             )
 
-        NewEyes newEyes ->
-            ( { model | eyes = newEyes }, Cmd.none )
+        ResetEyes eyes ->
+            ( { model | eyes = eyes }
+            , Cmd.none
+            )
+
+        NewEye ( ( x, y ), eye ) ->
+            ( { model | appearingEye = Just ( model.now, ( x, y ), eye ) }
+            , Cmd.none
+            )
+
+        ChangeEye ->
+            case model.eyes of
+                [] ->
+                    ( model, Cmd.none )
+
+                ( point, eye ) :: rest ->
+                    ( { model
+                        | disappearingEye = Just ( model.now, point, eye )
+                        , eyes = rest
+                      }
+                    , Random.generate NewEye randomEye
+                    )
 
 
 view : Model -> Html msg
 view model =
-    model.eyes
+    Html.div [ Html.Attributes.style [ ( "position", "relative" ) ] ]
+        [ Html.div [ Html.Attributes.style [ ( "position", "absolute" ) ] ]
+            [ TrippyBackground.view 750 500 (model.now / 1000) ]
+        , Html.div [ Html.Attributes.style [ ( "position", "absolute" ) ] ]
+            [ eyesView model ]
+        ]
+
+
+eyesView : Model -> Html msg
+eyesView model =
+    [ case model.disappearingEye of
+        Nothing ->
+            Collage.group []
+
+        Just ( startTime, ( x, y ), eye ) ->
+            let
+                alphaAnimation =
+                    Animation.animation startTime
+                        |> Animation.from 1.0
+                        |> Animation.to 0.0
+                        |> Animation.duration 2000
+            in
+                if Animation.isDone model.now alphaAnimation then
+                    Collage.group []
+                else
+                    Eye.view model.now eye
+                        |> Collage.scale (0.7 + 0.3 * Animation.animate model.now alphaAnimation)
+                        |> Collage.move ( x, y )
+                        |> Collage.alpha
+                            (Animation.animate model.now alphaAnimation)
+    , model.eyes
         |> List.map
             (\( ( x, y ), eye ) ->
                 Eye.view model.now eye
                     |> Collage.move ( x, y )
             )
+        |> Collage.group
+    , case model.appearingEye of
+        Nothing ->
+            Collage.group []
+
+        Just ( startTime, ( x, y ), eye ) ->
+            let
+                alphaAnimation =
+                    Animation.animation startTime
+                        |> Animation.from 0.0
+                        |> Animation.to 1.0
+                        |> Animation.duration appearTime
+            in
+                if Animation.isScheduled model.now alphaAnimation then
+                    Collage.group []
+                else
+                    Eye.view model.now eye
+                        |> Collage.scale (0.7 + 0.3 * Animation.animate model.now alphaAnimation)
+                        |> Collage.move ( x, y )
+                        |> Collage.alpha
+                            (alphaAnimation |> Animation.animate model.now)
+    ]
         |> Collage.collage 750 500
         |> Element.toHtml
-
-
-
--- ( ( 0, 0 )
---   , { irisSize = 120
---     , pupilSize = 50
---     , eyeSize = 200
---     , blinkStart = 0
---     }
---   )
--- , ( ( 150, 150 )
---   , { irisSize = 60
---     , pupilSize = 25
---     , eyeSize = 100
---     , blinkStart = 0
---     }
---   )
---
--- pupilGenerator : Float -> Random.Generator Float
--- pupilGenerator irisSize =
---     Random.float (min (irisSize / 10) 10) (irisSize * 0.9)
---
---
--- irisGenerator : Float -> Random.Generator Float
--- irisGenerator eyeSize =
---     Random.float (min (eyeSize / 10) 10) (eyeSize * 0.9)
 
 
 map7 :
@@ -144,13 +226,14 @@ main =
     Html.App.program
         { init =
             ( initialModel
-            , Random.generate NewEyes (Random.list 5 randomEye)
+            , Random.generate ResetEyes (Random.list 5 randomEye)
             )
         , subscriptions =
             \_ ->
                 Sub.batch
-                    [ Time.every 40 Tick
-                    , Time.every 3000 StartBlink
+                    [ AnimationFrame.diffs Tick
+                    , Time.every 3000 (always StartBlink)
+                    , Time.every 10000 (always ChangeEye)
                     ]
         , update = update
         , view = view

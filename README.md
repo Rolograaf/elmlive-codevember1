@@ -263,6 +263,8 @@ Day 13 of Codevember 2016\. (It's weekend!) We combine canvas and WebGL to make 
 
 ![first commit](Day13/first-commit.jpg) ![Animated eyelids](Day13/animated.gif) ![Aniated pupil](Day13/animated-iris.gif) ![animated 2 eyes](Day13/animated-2eyes.gif) ![random eyes](Day13/animated-randomeyes.gif) ![random colored eyes](Day13/animated-randomcoloredeyes.gif)
 
+![Final result with trippy background](Day13/animated-finalTrippy.gif)
+
 ## commands
 
 - `elm-package install mdgriffith/elm-color-mixing`
