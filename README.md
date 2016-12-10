@@ -261,10 +261,9 @@ Day 13 of Codevember 2016\. (It's weekend!) We combine canvas and WebGL to make 
 
 - Sexual misconduct allegations against Bill Clinton, Donald Trump, and Warren Buffet - [one](https://en.wikipedia.org/wiki/Bill_Clinton_sexual_misconduct_allegations) [two](https://en.wikipedia.org/wiki/Donald_Trump_sexual_misconduct_allegations) [three](http://nymag.com/thecut/2016/10/all-the-women-accusing-trump-of-rape-sexual-assault.html) [four](http://beforeitsnews.com/alternative/2012/05/human-sacrificing-satanist-bankster-warren-buffet-exposed-2181611.html)
 
-![first commit](Day13/first-commit.jpg) ![Animated eyelids](Day13/animated.gif) ![Aniated pupil](Day13/animated-iris.gif) ![animated 2 eyes](Day13/animated-2eyes.gif)
+![first commit](Day13/first-commit.jpg) ![Animated eyelids](Day13/animated.gif) ![Aniated pupil](Day13/animated-iris.gif) ![animated 2 eyes](Day13/animated-2eyes.gif) ![random eyes](Day13/animated-randomeyes.gif) ![random colored eyes](Day13/animated-randomcoloredeyes.gif)
 
 ## commands
 
-- `elm-package install evancz/elm-graphics`
-- `elm-package install elm-lang/window`
+- `elm-package install mdgriffith/elm-color-mixing`
 - `npm run live13` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day13/Main.elm --open` )

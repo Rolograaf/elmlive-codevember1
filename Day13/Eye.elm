@@ -2,20 +2,24 @@ module Day13.Eye exposing (Eye, startBlink, view)
 
 import Collage
 import Element
-import Color
+import Color exposing (Color)
 import Day13.Shapes as Shapes
 import Time exposing (Time)
 import Animation
+import Color.Mixing
 
 
 -- MODEL
 
 
 type alias Eye =
-    { irisSize : Float
-    , pupilSize : Float
-    , eyeSize : Float
+    { eyeSize : Float
+    , irisRatio : Float
+    , pupilRatio : Float
     , blinkStart : Time
+    , eyelidColor : Color
+    , irisColor : Color
+    , whitesColor : Color
     }
 
 
@@ -35,6 +39,12 @@ startBlink now eye =
 view : Time -> Eye -> Collage.Form
 view now model =
     let
+        irisSize =
+            model.eyeSize * model.irisRatio
+
+        pupilSize =
+            model.eyeSize * model.irisRatio * model.pupilRatio
+
         eyelidAnimation =
             Animation.animation model.blinkStart
                 |> Animation.from 0
@@ -48,19 +58,21 @@ view now model =
             Animation.animate now eyelidAnimation
     in
         Collage.group
-            [ whites model.irisSize model.eyeSize
-            , iris model.pupilSize
-                model.irisSize
+            [ whites model.whitesColor irisSize model.eyeSize
+            , iris (Color.Mixing.lighten 0.4 model.irisColor)
+                model.irisColor
+                pupilSize
+                irisSize
                 (sin rotationT)
                 (sin (rotationT * 3))
                 (sin (rotationT * 1.7))
-            , pupil model.pupilSize
-            , eyelids model.irisSize model.eyeSize opened
+            , pupil pupilSize
+            , eyelids model.eyelidColor irisSize model.eyeSize opened
             ]
 
 
-iris : Float -> Float -> Float -> Float -> Float -> Collage.Form
-iris pupilRadius size outerOffset midOffset pupilOffset =
+iris : Color -> Color -> Float -> Float -> Float -> Float -> Float -> Collage.Form
+iris bgcolor fgcolor pupilRadius size outerOffset midOffset pupilOffset =
     let
         pointsInCircle =
             40
@@ -77,7 +89,7 @@ iris pupilRadius size outerOffset midOffset pupilOffset =
             Collage.segment
                 (circlePoint size (outerIndex + outerOffset))
                 (circlePoint midRadius (innerIndex + innerOffset))
-                |> Collage.traced (Collage.solid Color.darkGreen)
+                |> Collage.traced (Collage.solid fgcolor)
 
         makeLines size midRadius outerOffset innerOffset outerIndex =
             [(outerIndex)..(outerIndex + 5)]
@@ -91,7 +103,7 @@ iris pupilRadius size outerOffset midOffset pupilOffset =
     in
         Collage.group
             [ Collage.circle size
-                |> Collage.filled Color.yellow
+                |> Collage.filled bgcolor
             , makeRing size midRadius outerOffset midOffset
             , makeRing midRadius pupilRadius midOffset pupilOffset
             ]
@@ -103,26 +115,26 @@ pupil size =
         |> Collage.filled Color.black
 
 
-whites : Float -> Float -> Collage.Form
-whites height width =
+whites : Color -> Float -> Float -> Collage.Form
+whites color height width =
     Collage.polygon
         (Shapes.curve ( width, 0 ) ( 0, (height * 2) ) ( -width, 0 ) 20
             ++ Shapes.curve ( width, 0 ) ( 0, -(height * 2) ) ( -width, 0 ) 20
         )
-        |> Collage.filled Color.white
+        |> Collage.filled color
 
 
-eyelids : Float -> Float -> Float -> Collage.Form
-eyelids height width opened =
+eyelids : Color -> Float -> Float -> Float -> Collage.Form
+eyelids color height width opened =
     Collage.group
         [ Collage.polygon
             (Shapes.curve ( -width, 0 ) ( 0, (height * 1.5 * opened) ) ( width, 0 ) 20
                 ++ Shapes.curve ( width, 0 ) ( 0, (height * 2) ) ( -width, 0 ) 20
             )
-            |> Collage.filled Color.brown
+            |> Collage.filled color
         , Collage.polygon
             (Shapes.curve ( -width, 0 ) ( 0, -(height * 1.5 * opened) ) ( width, 0 ) 20
                 ++ Shapes.curve ( width, 0 ) ( 0, -(height * 2) ) ( -width, 0 ) 20
             )
-            |> Collage.filled Color.brown
+            |> Collage.filled color
         ]

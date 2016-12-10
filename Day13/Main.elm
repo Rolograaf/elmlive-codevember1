@@ -2,11 +2,13 @@ module Main exposing (..)
 
 import Collage
 import Element
+import Color exposing (Color)
 import Day13.Eye as Eye exposing (Eye)
 import Html exposing (Html)
 import Html.App
 import Time exposing (Time)
 import Random
+import Random.Extra
 
 
 type alias Model =
@@ -83,23 +85,57 @@ view model =
 --     Random.float (min (eyeSize / 10) 10) (eyeSize * 0.9)
 
 
-createEye : Float -> Float -> Float -> Eye
-createEye eyeSize irisRatio pupilRatio =
-    { irisSize = eyeSize * irisRatio
-    , pupilSize = eyeSize * irisRatio * pupilRatio
-    , eyeSize = eyeSize
-    , blinkStart = 0
-    }
+map7 :
+    (a -> b -> c -> d -> e -> f -> g -> h)
+    -> Random.Generator a
+    -> Random.Generator b
+    -> Random.Generator c
+    -> Random.Generator d
+    -> Random.Generator e
+    -> Random.Generator f
+    -> Random.Generator g
+    -> Random.Generator h
+map7 f genA genB genC genD genE genF genG =
+    Random.Extra.map6 f genA genB genC genD genE genF
+        |> flip Random.Extra.andMap genG
+
+
+whitesColorGenerator : Random.Generator Color
+whitesColorGenerator =
+    Random.map3 Color.hsl
+        (Random.float -(degrees 50) (degrees 60))
+        (Random.float 0 1)
+        (Random.float 0.9 1.0)
+
+
+irisColorGenerator : Random.Generator Color
+irisColorGenerator =
+    Random.map3 Color.hsl
+        (Random.float (degrees 120) (degrees 250))
+        (Random.float 0.65 1)
+        (Random.float 0.1 0.5)
+
+
+skinColorGenerator : Random.Generator Color
+skinColorGenerator =
+    Random.map3 Color.hsl
+        (Random.float (degrees 25) (degrees 45))
+        (Random.Extra.constant 0.55)
+        (Random.float 0.2 0.7)
 
 
 randomEye : Random.Generator ( ( Float, Float ), Eye )
 randomEye =
     Random.map2 (,)
         (Random.map2 (,) (Random.float -250 250) (Random.float -150 150))
-        (Random.map3 createEye
-            (Random.float 50 300)
-            (Random.float 0.5 0.8)
+        (map7 Eye
+            (Random.float 50 250)
+            (Random.float 0.3 0.5)
             (Random.float 0.2 0.7)
+            (Random.Extra.constant 0)
+            skinColorGenerator
+            irisColorGenerator
+            whitesColorGenerator
         )
 
 
@@ -108,7 +144,7 @@ main =
     Html.App.program
         { init =
             ( initialModel
-            , Random.generate NewEyes (Random.list 3 randomEye)
+            , Random.generate NewEyes (Random.list 5 randomEye)
             )
         , subscriptions =
             \_ ->
