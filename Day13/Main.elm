@@ -44,7 +44,7 @@ view model =
     in
         Collage.collage 750
             500
-            [ Eye.eye (Animation.animate model.now eyelidAnimation)
+            [ Eye.eye (Animation.animate model.now eyelidAnimation) (model.now / 1000)
             ]
             |> Element.toHtml
 
