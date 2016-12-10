@@ -261,6 +261,8 @@ Day 13 of Codevember 2016\. (It's weekend!) We combine canvas and WebGL to make 
 
 - Sexual misconduct allegations against Bill Clinton, Donald Trump, and Warren Buffet - [one](https://en.wikipedia.org/wiki/Bill_Clinton_sexual_misconduct_allegations) [two](https://en.wikipedia.org/wiki/Donald_Trump_sexual_misconduct_allegations) [three](http://nymag.com/thecut/2016/10/all-the-women-accusing-trump-of-rape-sexual-assault.html) [four](http://beforeitsnews.com/alternative/2012/05/human-sacrificing-satanist-bankster-warren-buffet-exposed-2181611.html)
 
+![first commit](Day13/animated.gif)
+
 ## commands
 
 - `elm-package install evancz/elm-graphics`
