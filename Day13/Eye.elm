@@ -1,22 +1,61 @@
-module Day13.Eye exposing (eye)
+module Day13.Eye exposing (Eye, startBlink, view)
 
 import Collage
 import Element
 import Color
 import Day13.Shapes as Shapes
+import Time exposing (Time)
+import Animation
 
 
-eye : Float -> Float -> Collage.Form
-eye opened rotationT =
-    Collage.group
-        [ iris 50
-            120
-            (sin rotationT)
-            (sin (rotationT * 3))
-            (sin (rotationT * 1.7))
-        , pupil 50
-        , eyelids 120 200 opened
-        ]
+-- MODEL
+
+
+type alias Eye =
+    { irisSize : Float
+    , pupilSize : Float
+    , eyeSize : Float
+    , blinkStart : Time
+    }
+
+
+
+-- UPDATE
+
+
+startBlink : Time -> Eye -> Eye
+startBlink now eye =
+    { eye | blinkStart = now }
+
+
+
+-- VIEW
+
+
+view : Time -> Eye -> Collage.Form
+view now model =
+    let
+        eyelidAnimation =
+            Animation.animation model.blinkStart
+                |> Animation.from 0
+                |> Animation.to 1.0
+                |> Animation.duration 200
+
+        rotationT =
+            now / 1000
+
+        opened =
+            Animation.animate now eyelidAnimation
+    in
+        Collage.group
+            [ iris model.pupilSize
+                model.irisSize
+                (sin rotationT)
+                (sin (rotationT * 3))
+                (sin (rotationT * 1.7))
+            , pupil model.pupilSize
+            , eyelids model.irisSize model.eyeSize opened
+            ]
 
 
 iris : Float -> Float -> Float -> Float -> Float -> Collage.Form
