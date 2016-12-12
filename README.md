@@ -269,3 +269,31 @@ Day 13 of Codevember 2016\. (It's weekend!) We combine canvas and WebGL to make 
 
 - `elm-package install mdgriffith/elm-color-mixing`
 - `npm run live13` to start elm-live watching ( or `./node_modules/.bin/elm-live ./day13/Main.elm --open` )
+
+# continued day 16
+
+Day 16 of Codevember 2016\. (Sorry I could not find Day 14 and Day 15 on YouTube) We use Elm 0.18 for the first time and make an animated bike lane icon with elm-graphics.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day16/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day16>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=Uj7h7KND1_A&t=14s)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+<https://twitch.tv/avh4>
+
+Links:
+
+- Codevember <http://codevember.xyz/>
+- using [elm-graphics](http://package.elm-lang.org/packages/evancz/elm-graphics/latest)
+- using [animation-frame]{<http://package.elm-lang.org/packages/elm-lang/animation-frame/latest}>
+
+## commands
+
+- install Elm 0.18 from <https://guide.elm-lang.org/install.html>
+- run `elm-make` from the folder Day16 to make a new elm-package.json
+- `elm-package install evancz/elm-graphics`
+- `elm-package install elm-lang/animation-frame`
+- `elm-reactor` to check the new debugger functionality in elm 0.18
+
+Continued <https://youtu.be/Uj7h7KND1_A?t=2875>
