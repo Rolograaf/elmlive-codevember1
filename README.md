@@ -323,3 +323,24 @@ Links:
 - `elm-package install mdgriffith/elm-color-mixing`
 - `elm-package install elm-lang/animation-frame`
 - start with `elm-reactor`
+
+# Continued Day 19
+
+In a late-night edition of ElmLive, we animate an Emily Dickinson poem by candlelight.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day19/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day19>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=-ymOgRmCk_E)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- Codevember <http://codevember.xyz/>
+- [Emily Dickinson poems (Project Gutenberg)](http://www.gutenberg.org/cache/epub/12242/pg12242.txt)
+
+![animated](Day19/animated.gif)
+
+## commands
+
+- check for elm 0.18 `elm`
