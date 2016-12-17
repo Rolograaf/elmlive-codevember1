@@ -77,34 +77,42 @@ biker model =
                 |> Collage.move ( 0, model.torsoHeight / 2 + (model.headSize / 2) + 10 )
             , Collage.rect model.torsoWidth model.torsoHeight
                 |> Collage.filled color
+            , Collage.rect 20 40
+                |> Collage.filled color
+                |> Collage.rotate (degrees 80)
+                |> Collage.move ( model.torsoWidth / 2, model.torsoHeight * 0.35 )
             ]
                 |> Collage.groupTransform
                     (Transform.identity
                         |> Transform.multiply (Transform.translation 0 (model.torsoHeight / 2))
                         |> Transform.multiply (Transform.rotation -model.torsoAngle)
                     )
-    in
-        Collage.group
-            [ body Color.yellow
-            , [ Collage.group
-                    [ Collage.rect 30 60 |> Collage.filled Color.white
-                    , [ Collage.rect 30 40
-                            |> Collage.filled Color.orange
-                            |> Collage.move ( 0, -20 )
-                      ]
-                        |> Collage.groupTransform
-                            (Transform.identity
-                                |> Transform.multiply (Transform.rotation (degrees -40))
-                                |> Transform.multiply (Transform.translation 0 -30)
-                            )
-                      -- |> Collage.move ( 0, -30 )
-                    ]
-                    |> Collage.move ( 0, -30 )
-              ]
+
+        leg movement =
+            [ Collage.group
+                [ Collage.rect 30 60 |> Collage.filled Color.white
+                , [ Collage.rect 30 40
+                        |> Collage.filled Color.white
+                        |> Collage.move ( 0, -20 )
+                  ]
+                    |> Collage.groupTransform
+                        (Transform.identity
+                            |> Transform.multiply (Transform.rotation (degrees -(2 * movement)))
+                            |> Transform.multiply (Transform.translation 0 -30)
+                        )
+                ]
+                |> Collage.move ( 0, -30 )
+            ]
                 |> Collage.groupTransform
                     (Transform.identity
-                        |> Transform.multiply (Transform.rotation (degrees 40))
+                        |> Transform.multiply (Transform.rotation (degrees movement))
+                        |> Transform.multiply (Transform.rotation (degrees 30))
                     )
+    in
+        Collage.group
+            [ body Color.white
+            , leg (25 + -(50 / 2) * sin (model.t / 200))
+            , leg (25 + (50 / 2) * sin (model.t / 200))
             ]
 
 
@@ -125,6 +133,7 @@ bike t =
                 , headTilt = degrees -30
                 , t = t
                 }
+                |> Collage.move ( -30, 0 )
             ]
 
 
@@ -133,6 +142,27 @@ view model =
     [ Collage.rect 300 400
         |> Collage.filled Color.green
     , bike model.now
+        |> Collage.move ( 0, -60 )
+    , Collage.path [ ( -120, -30 ), ( 0, 0 ), ( 120, -30 ) ]
+        |> Collage.traced
+            { color = Color.white
+            , width = 20
+            , cap = Collage.Flat
+            , join = Collage.Sharp 10
+            , dashing = []
+            , dashOffset = 0
+            }
+        |> Collage.move ( 0, 170 + 10 * sin (0.3 * model.now / 1000) )
+    , Collage.path [ ( -120, -30 ), ( 0, 0 ), ( 120, -30 ) ]
+        |> Collage.traced
+            { color = Color.white
+            , width = 20
+            , cap = Collage.Flat
+            , join = Collage.Sharp 10
+            , dashing = []
+            , dashOffset = 0
+            }
+        |> Collage.move ( 0, 130 + 10 * sin (model.now / 1000) )
     ]
         |> Collage.collage 750 500
         |> Element.toHtml
