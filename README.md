@@ -280,13 +280,13 @@ Day 16 of Codevember 2016\. (Sorry I could not find Day 14 and Day 15 on YouTube
 - [recorded on YouTube](https://www.youtube.com/watch?v=Uj7h7KND1_A&t=14s)
 - Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
 
-<https://twitch.tv/avh4>
-
 Links:
 
 - Codevember <http://codevember.xyz/>
 - using [elm-graphics](http://package.elm-lang.org/packages/evancz/elm-graphics/latest)
 - using [animation-frame]{<http://package.elm-lang.org/packages/elm-lang/animation-frame/latest}>
+
+![animated](Day16/animated.gif)
 
 ## commands
 
@@ -296,4 +296,30 @@ Links:
 - `elm-package install elm-lang/animation-frame`
 - `elm-reactor` to check the new debugger functionality in elm 0.18
 
-Continued <https://youtu.be/Uj7h7KND1_A?t=2875>
+# Continued Day 18
+
+(Sorry I could not find Day 14, 15 and 17 on YouTube) We make a sunset beach scene with quadratic bezier curves.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day18/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day18>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=XQupsh_aGvQ)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- Codevember <http://codevember.xyz/>
+- [elm-graphics](http://package.elm-lang.org/packages/evancz/elm-graphics/latest)
+- works with [gradients](http://package.elm-lang.org/packages/elm-lang/core/latest/Color#linear) from color in core
+- [Color mixing lib](http://package.elm-lang.org/packages/mdgriffith/elm-color-mixing/latest)
+- [AnimationFrame](http://package.elm-lang.org/packages/elm-lang/animation-frame/latest)
+
+![animated (more quick)](Day18/animated.gif)
+
+## commands
+
+- check for elm 0.18 `elm`
+- `elm-package install evancz/elm-graphics`
+- `elm-package install mdgriffith/elm-color-mixing`
+- `elm-package install elm-lang/animation-frame`
+- start with `elm-reactor`
