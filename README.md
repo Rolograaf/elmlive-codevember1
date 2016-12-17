@@ -1,3 +1,13 @@
+# Elmlive Codevember 2016
+
+## ToC
+
+- [Day 1](#elmlive---codevember-day-1-2016)
+- [Day 2](#continued-day-2)
+- [Day 3](#continued-day-3)
+- Does this work?
+- [Day 19](#continued-day-19)
+
 # ElmLive - Codevember Day 1 (2016)
 
 ## Following along @avh4 at [youtube](https://www.youtube.com/playlist?list=PLDA4wlOlLJvXAEsJDje4hdLazsihZiQNf)
@@ -344,3 +354,32 @@ In a late-night edition of ElmLive, we animate an Emily Dickinson poem by candle
 ## commands
 
 - check for elm 0.18 `elm`
+- run with `elm-reactor`
+
+# Continued Day 21
+
+(sorry cannot find Day 20 on YouTube)
+
+We try using mdgriffith/elm-style-animation and run into some problems.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day21/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day21>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=d-0eFulN8n0)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- Codevember <http://codevember.xyz/>
+- [Style Animation lib](http://package.elm-lang.org/packages/mdgriffith/elm-style-animation/latest)
+- [elm-conf presentation "Rich Animation" by Matthew Griffith](https://www.youtube.com/watch?v=DsDwYqsLU3E) -
+
+![animated](Day21/animated.gif)
+
+## commands
+
+- check for elm 0.18 `elm`
+- run `elm-make` once in the folder to create `elm-package.json`
+- `elm-package install mdgriffith/elm-style-animation`
+- `elm-package install elm-lang/svg`
+- run with `elm-reactor`

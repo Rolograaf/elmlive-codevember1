@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "summary": "Elmlive coding for Codevember, this is day 21",
+    "repository": "https://github.com/Rolograaf/elmlive-codevember1.git",
+    "license": "BSD3",
+    "source-directories": [
+        ".", "C:/Users/Lourens/AppData/Roaming/npm/"
+    ],
+    "exposed-modules": [],
+    "dependencies": {
+        "elm-lang/core": "5.0.0 <= v < 6.0.0",
+        "elm-lang/html": "2.0.0 <= v < 3.0.0",
+        "elm-lang/svg": "2.0.0 <= v < 3.0.0",
+        "mdgriffith/elm-style-animation": "3.4.0 <= v < 4.0.0"
+    },
+    "elm-version": "0.18.0 <= v < 0.19.0"
+}
