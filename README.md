@@ -22,7 +22,7 @@
 - [Day 18](#continued-day-18)
 - [Day 19](#continued-day-19)
 - [Day 21](#continued-day-21)
-- [Day 22](Continued Day 21)
+- [Day 22](#Continued Day 22)
 
 # ElmLive - Codevember Day 1 (2016)
 
@@ -400,7 +400,7 @@ We try using mdgriffith/elm-style-animation and run into some problems.
 - `elm-package install elm-lang/svg`
 - run with `elm-reactor`
 
-# Continued Day 21
+# Continued Day 22
 
 We parse English sentences and visualize them as trees.
 
@@ -428,7 +428,44 @@ We parse English sentences and visualize them as trees.
 - `elm-package install Bogdanp/elm-combine`
 
 - run with `elm-reactor`
+
 - tree-diagram is a pre 0.18 lib so `git clone https://github.com/brenden/elm-tree-diagram.git`
+
+- change to this directory `cd elm-tree-diagram`
+
 - `npm install -g elm-upgrade`
 - run the 0.18 upgrade `elm-upgrade`
 - `elm-package install elm-lang/svg`
+
+# Continued Day 23
+
+We make grass grow 😅
+
+- Try it: <https://avh4.github.io/codevember-2016/Day23/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day23>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=KGQDZucFhtI)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- Codevember <http://codevember.xyz/>
+- [color-extra for hex calculation](http://package.elm-lang.org/packages/eskimoblood/elm-color-extra/latest)
+- [Random colors come from extra](http://package.elm-lang.org/packages/elm-community/random-extra/latest)
+- [mixing colors with mdgriffith's lib](http://package.elm-lang.org/packages/mdgriffith/elm-color-mixing/latest)
+- [we are going to use the mouse!](http://package.elm-lang.org/packages/elm-lang/mouse/latest)
+- [we need the size of the window](http://package.elm-lang.org/packages/elm-lang/window/latest)
+
+![animated](Day23/animated.gif)
+
+## commands
+
+- check for elm 0.18 `elm`
+- run `elm-make` once in the folder to create `elm-package.json`
+- `elm-package install elm-lang/svg`
+- `elm-package install eskimoblood/elm-color-extra`
+- `elm-package install elm-lang/animation-frame`
+- `elm-package install elm-community/random-extra`
+- `elm-package install mdgriffith/elm-color-mixing`
+- `elm-package install elm-lang/mouse`
+- `elm-package install elm-lang/window`
