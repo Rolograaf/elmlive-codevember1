@@ -5,8 +5,24 @@
 - [Day 1](#elmlive---codevember-day-1-2016)
 - [Day 2](#continued-day-2)
 - [Day 3](#continued-day-3)
-- Does this work?
+- [Day 4](#continued-day-4)
+- [Day 5](#continued-day-5)
+- [Day 6](#continued-day-6)
+- [Day 7](#continued-day-7)
+- [Day 8](#continued-day-8)
+- [Day 9](#continued-day-9)
+- [Day 10](#continued-day-10)
+- [Day 11](#continued-day-11)
+- [Day 12](#continued-day-12)
+- [Day 13](#continued-day-13)
+- -
+- -
+- [Day 16](#continued-day-16)
+- -
+- [Day 18](#continued-day-18)
 - [Day 19](#continued-day-19)
+- [Day 21](#continued-day-21)
+- [Day 22](Continued Day 21)
 
 # ElmLive - Codevember Day 1 (2016)
 
@@ -383,3 +399,36 @@ We try using mdgriffith/elm-style-animation and run into some problems.
 - `elm-package install mdgriffith/elm-style-animation`
 - `elm-package install elm-lang/svg`
 - run with `elm-reactor`
+
+# Continued Day 21
+
+We parse English sentences and visualize them as trees.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day22/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day22>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=2svnLZR_DBI)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- Codevember <http://codevember.xyz/>
+- Our source of sentences <https://www.gutenberg.org/cache/epub/37787/pg37787.txt>
+- [elm-combine](http://package.elm-lang.org/packages/Bogdanp/elm-combine/latest)
+- [elm-tree-diagram](http://package.elm-lang.org/packages/brenden/elm-tree-diagram/latest)
+
+  ![result](Day22/TreeDrawnFromParser.gif)
+
+  ## commands
+
+- check for elm 0.18 `elm`
+
+- run `elm-make` once in the folder to create `elm-package.json`
+
+- `elm-package install Bogdanp/elm-combine`
+
+- run with `elm-reactor`
+- tree-diagram is a pre 0.18 lib so `git clone https://github.com/brenden/elm-tree-diagram.git`
+- `npm install -g elm-upgrade`
+- run the 0.18 upgrade `elm-upgrade`
+- `elm-package install elm-lang/svg`
