@@ -1,17 +1,17 @@
 {
     "version": "1.0.0",
-    "summary": "Elmlive coding for Codevember, this is day 22",
-   "repository": "https://github.com/Rolograaf/elmlive-codevember1.git",
+    "summary": "Elmlive coding for Codevember, this is day 27",
+    "repository": "https://github.com/Rolograaf/elmlive-codevember1.git",
     "license": "BSD3",
     "source-directories": [
-        ".",
-        "elm-tree-diagram/src"
+        "."
     ],
     "exposed-modules": [],
     "dependencies": {
-        "Bogdanp/elm-combine": "3.1.1 <= v < 4.0.0",
+        "elm-community/linear-algebra": "1.0.0 <= v < 2.0.0",
         "elm-lang/core": "5.0.0 <= v < 6.0.0",
         "elm-lang/html": "2.0.0 <= v < 3.0.0",
+        "elm-lang/mouse": "1.0.1 <= v < 2.0.0",
         "elm-lang/svg": "2.0.0 <= v < 3.0.0"
     },
     "elm-version": "0.18.0 <= v < 0.19.0"

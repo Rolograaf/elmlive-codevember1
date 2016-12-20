@@ -22,7 +22,8 @@
 - [Day 18](#continued-day-18)
 - [Day 19](#continued-day-19)
 - [Day 21](#continued-day-21)
-- [Day 22](#Continued Day 22)
+- [Day 22](#Continued-day-22)
+- [Day 23](#continued-day-23)
 
 # ElmLive - Codevember Day 1 (2016)
 
@@ -434,7 +435,9 @@ We parse English sentences and visualize them as trees.
 - change to this directory `cd elm-tree-diagram`
 
 - `npm install -g elm-upgrade`
+
 - run the 0.18 upgrade `elm-upgrade`
+
 - `elm-package install elm-lang/svg`
 
 # Continued Day 23
@@ -469,3 +472,43 @@ We make grass grow 😅
 - `elm-package install mdgriffith/elm-color-mixing`
 - `elm-package install elm-lang/mouse`
 - `elm-package install elm-lang/window`
+
+# Continued Day 24 is missing and Day 25 and 26 are continuation of that project
+
+# Continued Day 27
+
+We exercise our knowledge of vector math and make flipping coins with SVG.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day27/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day27>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- [recorded on YouTube](https://www.youtube.com/watch?v=t1WK3vt_C_c)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- Codevember <http://codevember.xyz/>
+
+## Elm packages used today:
+
+- <http://package.elm-lang.org/packages/elm-community/linear-algebra/latest>
+- <http://package.elm-lang.org/packages/elm-lang/animation-frame/latest>
+- <http://package.elm-lang.org/packages/elm-lang/mouse/latest>
+- <http://package.elm-lang.org/packages/elm-lang/svg/latest>
+- <http://package.elm-lang.org/packages/elm-lang/window/latest>
+
+## Politics links:
+
+- [Twitter thread about calling your representatives](https://twitter.com/editoremilye/status/797243415922515970)
+- [Blog post about CallMyCongress](https://medium.com/@mariechatfield/introducing-callmycongress-com-a-better-way-to-reach-your-representatives-51b86f3e547c)
+- [Contact your representatives](http://www.callmycongress.com/)
+
+## commands
+
+- check for elm 0.18 `elm`
+- run `elm-make` once in the folder to create `elm-package.json`
+- `elm-package install elm-lang/svg`
+- `elm-package install elm-lang/mouse`
+- `elm-package install elm-community/linear-algebra`
+
+continue at <https://www.youtube.com/watch?v=J5IStXZhEKs>
