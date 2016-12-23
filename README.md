@@ -482,6 +482,7 @@ We exercise our knowledge of vector math and make flipping coins with SVG.
 - Try it: <https://avh4.github.io/codevember-2016/Day27/>
 - Code: <https://github.com/avh4/codevember-2016/tree/master/Day27>
 - [streamed on Twitch](https://twitch.tv/avh4)
+- you could use [Livestreamer](http://docs.livestreamer.io/) for that.
 - [recorded on YouTube](https://www.youtube.com/watch?v=t1WK3vt_C_c)
 - Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
 
@@ -503,6 +504,8 @@ We exercise our knowledge of vector math and make flipping coins with SVG.
 - [Blog post about CallMyCongress](https://medium.com/@mariechatfield/introducing-callmycongress-com-a-better-way-to-reach-your-representatives-51b86f3e547c)
 - [Contact your representatives](http://www.callmycongress.com/)
 
+![animated](Day27/animated.gif)
+
 ## commands
 
 - check for elm 0.18 `elm`
@@ -510,5 +513,5 @@ We exercise our knowledge of vector math and make flipping coins with SVG.
 - `elm-package install elm-lang/svg`
 - `elm-package install elm-lang/mouse`
 - `elm-package install elm-community/linear-algebra`
-
-continue at <https://www.youtube.com/watch?v=J5IStXZhEKs>
+- `elm-package install elm-lang/animation-frame`
+- `elm-package install elm-lang/window`
