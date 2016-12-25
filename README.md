@@ -30,6 +30,7 @@
 - [Day 27](#continued-day-27)
 - [Day 28](#continued-day-28)
 - [Day 29](#continued-day-29)
+- [Day 30](#continued-day-30)
 
 
 # ElmLive - Codevember Day 1 (2016)
@@ -574,3 +575,26 @@ We invent a primitive artificial lifeform.
 - `elm-package install evancz/elm-graphics`
 - `elm-package install elm-community/linear-algebra` for the Math.Vector2 package
 - `elm-package install elm-lang/animation-frame`
+
+# Continued Day 30
+
+We wrap up Codevember with a simple simulation using the PlanetCute tiles.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day30/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day30>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- you could use [Livestreamer](http://docs.livestreamer.io/) for that.
+- [recorded on YouTube](https://youtu.be/s_Tj3I6YKyo)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- [Codevember](http://codevember.xyz/)
+- [PlanetCute tileset ](http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html)
+
+![animated](Day30/animated.gif)
+
+## commands
+
+- check for elm 0.18 `elm`
+- run `elm-make` once in the folder to create `elm-package.json`
