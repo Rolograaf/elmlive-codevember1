@@ -598,3 +598,4 @@ We wrap up Codevember with a simple simulation using the PlanetCute tiles.
 
 - check for elm 0.18 `elm`
 - run `elm-make` once in the folder to create `elm-package.json`
+- `elm-package install elm-community/random-extra`
