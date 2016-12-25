@@ -28,6 +28,9 @@
 - -
 - -
 - [Day 27](#continued-day-27)
+- [Day 28](#continued-day-28)
+- [Day 29](#continued-day-29)
+
 
 # ElmLive - Codevember Day 1 (2016)
 
@@ -537,6 +540,32 @@ We make turbulent particles with elm-graphics.
 - Today's inspiration: [Jack Rugile - Simplex Vector Flow Field](https://codepen.io/jackrugile/full/zodPjd)
 
 ![animated](Day28/animated.gif)
+
+## commands
+
+- check for elm 0.18 `elm`
+- run `elm-make` once in the folder to create `elm-package.json`
+- `elm-package install evancz/elm-graphics`
+- `elm-package install elm-community/linear-algebra` for the Math.Vector2 package
+- `elm-package install elm-lang/animation-frame`
+
+# Continued Day 29
+
+We invent a primitive artificial lifeform.
+
+- Try it: <https://avh4.github.io/codevember-2016/Day29/>
+- Code: <https://github.com/avh4/codevember-2016/tree/master/Day29>
+- [streamed on Twitch](https://twitch.tv/avh4)
+- you could use [Livestreamer](http://docs.livestreamer.io/) for that.
+- [recorded on YouTube](https://youtu.be/SwnKZ7Ot0ho)
+- Send Aaron your comments on twitter @avh4\. Thanks for watching and trying out Elm!
+
+## Links:
+
+- [Codevember](http://codevember.xyz/)
+- [Boids](https://en.wikipedia.org/wiki/Boids)
+
+![animated](Day29/animated.gif)
 
 ## commands
 
